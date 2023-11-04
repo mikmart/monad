@@ -36,7 +36,6 @@
 #' @param ... Additional arguments passed to `f`.
 #'
 #' @name monad
-#' @import S7
 NULL
 
 #' @rdname monad
@@ -52,14 +51,18 @@ delayedAssign("%>-%", pipeop(monad::bind))
 
 #' @rdname monad
 #' @export
-fmap <- new_generic("fmap", "m", function(m, f, ...) S7_dispatch())
+fmap <- function(m, f, ...) UseMethod("fmap")
 
 #' @rdname monad
 #' @export
-bind <- new_generic("bind", "m", function(m, f, ...) S7_dispatch())
-method(bind, class_any) <- function(m, f, ...) join(fmap(m, f, ...))
+bind <- function(m, f, ...) UseMethod("bind")
+
+#' @export
+bind.default <- function(m, f, ...) join(fmap(m, f, ...))
 
 #' @rdname monad
 #' @export
-join <- new_generic("join", "m", function(m) S7_dispatch())
-method(join, class_any) <- function(m) bind(m, identity)
+join <- function(m) UseMethod("join")
+
+#' @export
+join.default <- function(m) bind(m, identity)
