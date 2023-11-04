@@ -26,8 +26,6 @@ pipecall <- function(opfunc, lhs, rhs) {
 }
 
 # A convenient form for testing.
-# pipecallq(fmap, m %>>% f(x))
-# pipecallq(bind, m %>-% f(x))
 pipecallq <- function(func, expr) {
   func <- substitute(func)
   expr <- substitute(expr)

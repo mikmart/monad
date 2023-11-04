@@ -36,6 +36,7 @@
 #' @param ... Additional arguments passed to `f`.
 #'
 #' @name monad
+#' @import S7
 NULL
 
 #' @rdname monad
