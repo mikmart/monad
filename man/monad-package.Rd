@@ -4,7 +4,7 @@
 \name{monad-package}
 \alias{monad}
 \alias{monad-package}
-\title{monad: What the Package Does (One Line, Title Case)}
+\title{monad: Monad Operators and Generics}
 \description{
 What the package does (one paragraph).
 }

@@ -13,9 +13,3 @@ Imports:
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-Collate: 
-    'monad.R'
-    'maybe.R'
-    'monad-package.R'
-    'pipeop.R'
-    'result.R'
