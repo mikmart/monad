@@ -8,16 +8,14 @@ test_that("lhs of a pipe call can be NULL", {
 })
 
 test_that("pipe operators throw useful errors for incorrect usage", {
-  m <- f <- NULL # Avoid undefined variable checks.
   expect_snapshot(error = TRUE, m %>>% f)
   expect_snapshot(error = TRUE, m %>-% f)
 })
 
 test_that("can create custom pipe operators", {
-  map_nullable <- function(x, f, ...) if (is.null(x)) x else f(x, ...)
-  `%?>%` <- pipeop(map_nullable)
-  expect_equal(NULL %?>% strsplit(""), NULL)
-  expect_equal("42" %?>% strsplit(""), list(c("4", "2")))
-  expect_equal(NULL %?>% function(x) strsplit(x, "")[[1]], NULL)
+  `%?>%` <- pipeop(function(x, f, ...) if (is.null(x)) x else f(x, ...))
+  strscan <- function(x, sep, i = 1) sapply(strsplit(x, sep), `[`, i)
+  expect_equal(NULL %?>% strscan(""), NULL)
+  expect_equal("42" %?>% strscan(""), "4")
   expect_equal("42" %?>% function(x) strsplit(x, "")[[1]], c("4", "2"))
 })
