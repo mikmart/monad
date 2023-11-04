@@ -14,6 +14,7 @@ pipeop <- function(func) {
 
 # Create a call to opfunc from the lhs and rhs of a pipe operator.
 pipecall <- function(opfunc, lhs, rhs) {
+  lhs <- list(lhs)
   func <- rhs[[1]]
   args <- as.list(rhs[-1])
   if (func == quote(`function`)) {

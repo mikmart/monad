@@ -45,10 +45,6 @@ embed some form of control flow or state management in \code{bind()} or
 There is a default implementation for \code{join()} if you provide \code{bind()}, and
 a default implementation for \code{bind()} if you provide \code{join()} and \code{fmap()}.
 For performance reasons you may wish to implement both regardless.
-
-A dynamically typed language like R can't enforce accurate implementation
-or use of monads. Regardless, they can be helpful constructs when used
-correctly.
 }
 
 \section{Operators}{

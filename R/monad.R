@@ -18,10 +18,6 @@
 #'   a default implementation for `bind()` if you provide `join()` and `fmap()`.
 #'   For performance reasons you may wish to implement both regardless.
 #'
-#'   A dynamically typed language like R can't enforce accurate implementation
-#'   or use of monads. Regardless, they can be helpful constructs when used
-#'   correctly.
-#'
 #' @section Operators:
 #'
 #'   The pipe operators expect a monadic object as `lhs` and a call expression
