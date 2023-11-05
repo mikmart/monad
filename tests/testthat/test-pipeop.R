@@ -11,7 +11,7 @@ test_that("anonymous functions in rhs behave as expected", {
   expect_equal(pipecallq(fmap, m %>>% \(x) x + 1), fmap(m, \(x) x + 1) |> quote())
 })
 
-test_that("rhs can be a parethesized anonymous function", {
+test_that("rhs can be a parenthesized anonymous function", {
   expect_equal(pipecallq(fmap, m %>>% (\(x) x + 1)), fmap(m, (\(x) x + 1)) |> quote())
 })
 
