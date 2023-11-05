@@ -40,7 +40,6 @@ NULL
 
 #' @include pipeop.R
 #' @import S7
-rlang::on_load(methods_register())
 
 #' @rdname monad
 #' @export
