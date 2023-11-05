@@ -36,19 +36,19 @@
 #' @param ... Additional arguments passed to `f`.
 #'
 #' @name monad
-#' @import S7
 NULL
 
-#' @rdname monad
-#' @export
-`%>>%` <- NULL
+#' @include pipeop.R
+#' @import S7
+rlang::on_load(methods_register())
 
 #' @rdname monad
 #' @export
-`%>-%` <- NULL
+`%>>%` <- pipeop(monad::fmap)
 
-delayedAssign("%>>%", pipeop(monad::fmap))
-delayedAssign("%>-%", pipeop(monad::bind))
+#' @rdname monad
+#' @export
+`%>-%` <- pipeop(monad::bind)
 
 #' @rdname monad
 #' @export
