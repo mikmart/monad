@@ -23,8 +23,9 @@ expect_associativity(h, g, m)
 \item{m}{A monadic object.}
 }
 \description{
-Implementing classes are expected to satisfy the three \href{https://wiki.haskell.org/Monad_laws}{monad laws}. Functions to test if the laws
-hold are provided for use with the \code{testthat} package.
+Classes implementing \code{\link[=bind]{bind()}} or \code{\link[=join]{join()}} are expected to satisfy the three
+\href{https://wiki.haskell.org/Monad_laws}{monad laws}. Functions to test if the
+laws hold are provided for use with the \code{testthat} package.
 }
 \details{
 The laws have been translated to R in the expectations as follows:

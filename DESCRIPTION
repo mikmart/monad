@@ -19,6 +19,7 @@ Config/testthat/edition: 3
 URL: https://github.com/mikmart/monad
 BugReports: https://github.com/mikmart/monad/issues
 Collate: 
+    'functor-laws.R'
     'pipeop.R'
     'monad.R'
     'maybe.R'

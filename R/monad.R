@@ -1,9 +1,11 @@
 #' Monad Operators and Generics
 #'
-#' Classes implementing methods for these S7 generics are called monads. Methods
-#' should be implemented such that the \link[=monad-laws]{monad laws} hold.
-#' `%>>%` is the `fmap()` pipe operator, and `%>-%` is the `bind()` pipe
-#' operator. Operator usage is in the form `m %>>% f(...)`.
+#' Classes implementing methods for these S7 generics are called monads.
+#' `fmap()` should be implemented such that the \link[=functor-laws]{functors
+#' laws} hold. `bind()` or `join()` should be implemented such that the
+#' \link[=monad-laws]{monad laws} hold. `%>>%` is the `fmap()` pipe operator,
+#' and `%>-%` is the `bind()` pipe operator. Operator usage is in the form `m
+#' %>>% f(...)`.
 #'
 #' @section Details:
 #'
@@ -36,8 +38,8 @@
 #' @param f,rhs A function. For `bind()`, it should return a monadic object.
 #' @param ... Additional arguments passed to `f`.
 #'
-#' @seealso The \link[=monad-laws]{monad laws} that implementations should
-#'   satisfy.
+#' @seealso The \link[=monad-laws]{monad laws} and \link[=functor-laws]{functor
+#'   laws} that implementations should satisfy.
 #'
 #' @name monad
 NULL

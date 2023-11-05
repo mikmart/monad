@@ -27,10 +27,11 @@ join(m)
 \item{...}{Additional arguments passed to \code{f}.}
 }
 \description{
-Classes implementing methods for these S7 generics are called monads. Methods
-should be implemented such that the \link[=monad-laws]{monad laws} hold.
-\verb{\%>>\%} is the \code{fmap()} pipe operator, and \verb{\%>-\%} is the \code{bind()} pipe
-operator. Operator usage is in the form \code{m \%>>\% f(...)}.
+Classes implementing methods for these S7 generics are called monads.
+\code{fmap()} should be implemented such that the \link[=functor-laws]{functors
+laws} hold. \code{bind()} or \code{join()} should be implemented such that the
+\link[=monad-laws]{monad laws} hold. \verb{\%>>\%} is the \code{fmap()} pipe operator,
+and \verb{\%>-\%} is the \code{bind()} pipe operator. Operator usage is in the form \code{m \%>>\% f(...)}.
 }
 \section{Details}{
 
@@ -65,6 +66,6 @@ A class that only implements \code{fmap()} is called a functor.
 }
 
 \seealso{
-The \link[=monad-laws]{monad laws} that implementations should
-satisfy.
+The \link[=monad-laws]{monad laws} and \link[=functor-laws]{functor
+laws} that implementations should satisfy.
 }

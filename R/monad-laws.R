@@ -1,8 +1,8 @@
 #' Monad Laws
 #'
-#' Implementing classes are expected to satisfy the three [monad
-#' laws](https://wiki.haskell.org/Monad_laws). Functions to test if the laws
-#' hold are provided for use with the `testthat` package.
+#' Classes implementing [bind()] or [join()] are expected to satisfy the three
+#' [monad laws](https://wiki.haskell.org/Monad_laws). Functions to test if the
+#' laws hold are provided for use with the `testthat` package.
 #'
 #' The laws have been translated to R in the expectations as follows:
 #'
