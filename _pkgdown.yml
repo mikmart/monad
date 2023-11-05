@@ -1,0 +1,12 @@
+url: https://mikmart.github.io/monad/
+template:
+  bootstrap: 5
+reference:
+  - subtitle: Monad
+  - contents: ["monad"]
+  - subtitle: Implementation Laws
+    desc: The rules that implementations of the generics must follow.
+  - contents: ends_with("laws")
+  - subtitle: Implementations
+    desc: Classes with implementations for the generics.
+  - contents: ["maybe"]

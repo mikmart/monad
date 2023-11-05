@@ -5,8 +5,7 @@
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-monad is an experiment to provide generic operators for monadic classes with S7.
-The package provides:
+monad is provides S7 generic operators for monadic classes. Features include:
 
 * `fmap()`, `bind()` and `join()` S7 generic functions.
 * `%>>%` and `%>-%` pipe operators for `fmap()` and `bind()` respectively.
@@ -21,5 +20,6 @@ the method implementations must satisfy the functor and monad laws.
 Install from GitHub with:
 
 ``` r
+# install.packages("pak")
 pak::pak("mikmart/monad")
 ```

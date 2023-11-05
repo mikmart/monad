@@ -1,12 +1,12 @@
 #' The Maybe Monad
 #'
-#' Package [maybe](https://armcn.github.io/maybe/) implements the Maybe monad.
-#' Here method implementations are provided for the `maybe` S3 class from the
-#' maybe package for the [fmap()], [bind()] and [join()] generics. The methods
-#' are simple wrappers for the corresponding functions in maybe.
+#' The package [maybe](https://armcn.github.io/maybe/) implements the Maybe
+#' monad. Here method implementations for [fmap()], [bind()] and [join()]
+#' are provided for the `maybe` S3 class from the package. The methods are
+#' simple wrappers for the corresponding functions in maybe.
 #'
-#' @seealso [maybe::maybe_map()] which implements [fmap()] for Maybe values.
-#' @seealso [maybe::and_then()] which implements [bind()] for Maybe values.
+#' @seealso [maybe::maybe_map()] which implements [fmap()] for `maybe` values.
+#' @seealso [maybe::and_then()] which implements [bind()] for `maybe` values.
 #'
 #' @examplesIf rlang::is_installed("maybe")
 #'

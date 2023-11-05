@@ -17,7 +17,8 @@ Suggests:
     maybe,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-URL: https://github.com/mikmart/monad
+URL: https://github.com/mikmart/monad,
+    https://mikmart.github.io/monad/
 BugReports: https://github.com/mikmart/monad/issues
 Collate: 
     'functor-laws.R'
