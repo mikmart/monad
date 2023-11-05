@@ -11,7 +11,6 @@ simple wrappers for the corresponding functions in maybe.
 }
 \examples{
 \dontshow{if (rlang::is_installed("maybe")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-
 # The fmap operator corresponds to maybe::maybe_map().
 maybe::just(1) \%>>\% `+`(1)
 maybe::nothing() \%>>\% `+`(1)

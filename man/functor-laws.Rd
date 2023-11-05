@@ -17,12 +17,10 @@ expect_holds_preserve_composition(f, g, m)
 }
 \description{
 Classes implementing \code{\link[=fmap]{fmap()}} are expected to satisfy two functor laws.
-Functions to test if the laws hold are provided for use with the \code{testthat}
-package.
+\code{testthat} expectations are provided to check that the laws hold.
 }
 \details{
-The Haskell functor laws have been translated to R in the expectations as
-follows:
+The Haskell functor laws have been translated into R as follows:
 
 \describe{
 \item{Preservation of identity:}{\code{m \%>>\% identity} is equal to \code{m |> identity()}.}

@@ -24,12 +24,10 @@ expect_holds_associativity(h, g, m)
 }
 \description{
 Classes implementing \code{\link[=bind]{bind()}} or \code{\link[=join]{join()}} are expected to satisfy three monad
-laws. Functions to test if the laws hold are provided for use with the
-\code{testthat} package.
+laws. \code{testthat} expectations are provided to check that the laws hold.
 }
 \details{
-The Haskell monad laws have been translated to R in the expectations as
-follows:
+The Haskell monad laws have been translated into R as follows:
 
 \describe{
 \item{Left identity:}{\code{pure(a) \%>-\% h} is equal to \code{h(a)}.}

@@ -9,7 +9,6 @@
 #' @seealso [maybe::and_then()] which implements [bind()] for `maybe` values.
 #'
 #' @examplesIf rlang::is_installed("maybe")
-#'
 #' # The fmap operator corresponds to maybe::maybe_map().
 #' maybe::just(1) %>>% `+`(1)
 #' maybe::nothing() %>>% `+`(1)
