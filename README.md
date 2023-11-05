@@ -7,7 +7,7 @@
 
 monad provides generic operators for monadic classes. Features include:
 
-* `fmap()`, `bind()` and `join()` S7 generic functions.
+* `fmap()`, `bind()` and `join()` [S7](https://rconsortium.github.io/S7/) generic functions.
 * `%>>%` and `%>-%` pipe operators for `fmap()` and `bind()` respectively.
 * [testthat](https://testthat.r-lib.org/) expectations for functor and monad laws.
 * Implementations of the generics for the [maybe](https://armcn.github.io/maybe/) package.
@@ -17,7 +17,7 @@ the method implementations must satisfy the functor and monad laws.
 
 ## Installation
 
-Install from GitHub with:
+Install from [GitHub](https://github.com/mikmart/monad) with:
 
 ``` r
 # install.packages("pak")
