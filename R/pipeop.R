@@ -19,8 +19,8 @@ pipecall <- function(opfunc, lhs, rhs) {
     func <- rhs[[1]]
     args <- as.list(rhs[-1])
   }
-  if (func == quote(`function`)) {
-    # RHS is an anonymous function.
+  # Handle "special" calls that can occur as RHS.
+  if (func == quote(`function`) || func == quote(`(`)) {
     func <- list(rhs)
     args <- list()
   }

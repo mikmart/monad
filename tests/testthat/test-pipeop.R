@@ -11,6 +11,10 @@ test_that("anonymous functions in rhs behave as expected", {
   expect_equal(pipecallq(fmap, m %>>% \(x) x + 1), fmap(m, \(x) x + 1) |> quote())
 })
 
+test_that("rhs can be a parethesized anonymous function", {
+  expect_equal(pipecallq(fmap, m %>>% (\(x) x + 1)), fmap(m, (\(x) x + 1)) |> quote())
+})
+
 test_that("can create custom pipe operators", {
   `%?>%` <- pipeop(\(x, f, ...) if (is.null(x)) x else f(x, ...))
   strscan <- \(x, sep, i = 1L) sapply(strsplit(x, sep), `[`, i)
