@@ -1,7 +1,7 @@
 #' Monad Operators and Generics
 #'
 #' Classes implementing methods for these S7 generics are called monads.
-#' `fmap()` should be implemented such that the \link[=functor-laws]{functors
+#' `fmap()` should be implemented such that the \link[=functor-laws]{functor
 #' laws} hold. `bind()` or `join()` should be implemented such that the
 #' \link[=monad-laws]{monad laws} hold. `%>>%` is the `fmap()` pipe operator,
 #' and `%>-%` is the `bind()` pipe operator. Operator usage is in the form `m
