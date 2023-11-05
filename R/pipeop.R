@@ -4,9 +4,6 @@ pipeop <- function(func) {
   function(lhs, rhs) {
     lhs <- substitute(lhs)
     rhs <- substitute(rhs)
-    if (!is.call(rhs)) {
-      stop(sprintf("`rhs` must be a call, not a %s.", typeof(rhs)))
-    }
     expr <- pipecall(func, lhs, rhs)
     eval.parent(expr)
   }
@@ -15,8 +12,13 @@ pipeop <- function(func) {
 # Create a call to opfunc from the lhs and rhs of a pipe operator.
 pipecall <- function(opfunc, lhs, rhs) {
   lhs <- list(lhs)
-  func <- rhs[[1]]
-  args <- as.list(rhs[-1])
+  if (!is.call(rhs)) {
+    func <- rhs
+    args <- list()
+  } else {
+    func <- rhs[[1]]
+    args <- as.list(rhs[-1])
+  }
   if (func == quote(`function`)) {
     # RHS is an anonymous function.
     func <- list(rhs)
