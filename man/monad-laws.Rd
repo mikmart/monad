@@ -2,17 +2,7 @@
 % Please edit documentation in R/monad-laws.R
 \name{monad-laws}
 \alias{monad-laws}
-\alias{expect_holds_left_identity}
-\alias{expect_holds_right_identity}
-\alias{expect_holds_associativity}
 \title{Monad Laws}
-\usage{
-expect_holds_left_identity(pure, h, a)
-
-expect_holds_right_identity(pure, m)
-
-expect_holds_associativity(h, g, m)
-}
 \arguments{
 \item{pure}{The function to wrap a value in the monad.}
 
@@ -23,11 +13,11 @@ expect_holds_associativity(h, g, m)
 \item{m}{A monadic object.}
 }
 \description{
-Classes implementing \code{\link[=bind]{bind()}} or \code{\link[=join]{join()}} are expected to satisfy three monad
-laws. \code{testthat} expectations are provided to check that the laws hold.
+Classes implementing \code{\link[=bind]{bind()}} are expected to satisfy three monad laws: left
+identity, right identity, and associativity.
 }
 \details{
-The Haskell monad laws have been translated into R as follows:
+The Haskell monad laws can be translated into R as follows:
 
 \describe{
 \item{Left identity:}{\code{pure(a) \%>-\% h} is equal to \code{h(a)}.}

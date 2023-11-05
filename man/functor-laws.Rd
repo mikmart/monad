@@ -2,25 +2,18 @@
 % Please edit documentation in R/functor-laws.R
 \name{functor-laws}
 \alias{functor-laws}
-\alias{expect_holds_preserve_identity}
-\alias{expect_holds_preserve_composition}
 \title{Functor Laws}
-\usage{
-expect_holds_preserve_identity(m)
-
-expect_holds_preserve_composition(f, g, m)
-}
 \arguments{
 \item{m}{A functor object.}
 
 \item{f, g}{Functions.}
 }
 \description{
-Classes implementing \code{\link[=fmap]{fmap()}} are expected to satisfy two functor laws.
-\code{testthat} expectations are provided to check that the laws hold.
+Classes implementing \code{\link[=fmap]{fmap()}} are expected to satisfy two functor laws:
+preservation of identity and preservation of composition.
 }
 \details{
-The Haskell functor laws have been translated into R as follows:
+The Haskell functor laws can be translated into R as follows:
 
 \describe{
 \item{Preservation of identity:}{\code{m \%>>\% identity} is equal to \code{m |> identity()}.}

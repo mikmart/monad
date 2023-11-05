@@ -28,7 +28,7 @@ join(m)
 }
 \description{
 Classes implementing methods for these S7 generics are called monads.
-\code{fmap()} should be implemented such that the \link[=functor-laws]{functors
+\code{fmap()} should be implemented such that the \link[=functor-laws]{functor
 laws} hold. \code{bind()} or \code{join()} should be implemented such that the
 \link[=monad-laws]{monad laws} hold. \verb{\%>>\%} is the \code{fmap()} pipe operator,
 and \verb{\%>-\%} is the \code{bind()} pipe operator. Operator usage is in the form \code{m \%>>\% f(...)}.

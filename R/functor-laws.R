@@ -1,9 +1,9 @@
 #' Functor Laws
 #'
-#' Classes implementing [fmap()] are expected to satisfy two functor laws.
-#' `testthat` expectations are provided to check that the laws hold.
+#' Classes implementing [fmap()] are expected to satisfy two functor laws:
+#' preservation of identity and preservation of composition.
 #'
-#' The Haskell functor laws have been translated into R as follows:
+#' The Haskell functor laws can be translated into R as follows:
 #'
 #' \describe{
 #'  \item{Preservation of identity:}{`m %>>% identity` is equal to `m |> identity()`.}
@@ -20,19 +20,3 @@
 #' @family implementation laws
 #' @name functor-laws
 NULL
-
-#' @rdname functor-laws
-#' @export
-expect_holds_preserve_identity <- function(m) {
-  rlang::check_installed("testthat")
-  testthat::expect_equal(m %>>% identity, m |> identity())
-}
-
-#' @rdname functor-laws
-#' @export
-expect_holds_preserve_composition <- function(f, g, m) {
-  rlang::check_installed("testthat")
-  testthat::expect_equal(m %>>% (f %.% g), m %>>% g %>>% f)
-}
-
-`%.%` <- function(f, g) function(...) f(g(...))

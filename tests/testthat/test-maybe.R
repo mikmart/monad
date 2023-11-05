@@ -1,5 +1,4 @@
 test_that("monad laws are satisfied", {
-  # https://wiki.haskell.org/Monad_laws
   h <- function(x) maybe::just(x / 2)
   g <- function(x) maybe::just(x + 2)
 
@@ -14,7 +13,6 @@ test_that("monad laws are satisfied", {
 })
 
 test_that("functor laws are satisfied", {
-  # https://wiki.haskell.org/Functor#Functor_Laws
   f <- function(x) x / 2
   g <- function(x) x + 2
 

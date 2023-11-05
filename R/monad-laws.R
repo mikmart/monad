@@ -1,9 +1,9 @@
 #' Monad Laws
 #'
-#' Classes implementing [bind()] or [join()] are expected to satisfy three monad
-#' laws. `testthat` expectations are provided to check that the laws hold.
+#' Classes implementing [bind()] are expected to satisfy three monad laws: left
+#' identity, right identity, and associativity.
 #'
-#' The Haskell monad laws have been translated into R as follows:
+#' The Haskell monad laws can be translated into R as follows:
 #'
 #' \describe{
 #'  \item{Left identity:}{`pure(a) %>-% h` is equal to `h(a)`.}
@@ -21,24 +21,3 @@
 #' @family implementation laws
 #' @name monad-laws
 NULL
-
-#' @rdname monad-laws
-#' @export
-expect_holds_left_identity <- function(pure, h, a) {
-  rlang::check_installed("testthat")
-  testthat::expect_equal(pure(a) %>-% h, h(a))
-}
-
-#' @rdname monad-laws
-#' @export
-expect_holds_right_identity <- function(pure, m) {
-  rlang::check_installed("testthat")
-  testthat::expect_equal(m %>-% pure, m)
-}
-
-#' @rdname monad-laws
-#' @export
-expect_holds_associativity <- function(h, g, m) {
-  rlang::check_installed("testthat")
-  testthat::expect_equal((m %>-% g) %>-% h, m %>-% \(x) g(x) %>-% h)
-}
