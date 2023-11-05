@@ -22,4 +22,5 @@ Collate:
     'pipeop.R'
     'monad.R'
     'maybe.R'
+    'monad-laws.R'
     'zzz.R'

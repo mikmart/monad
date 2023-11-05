@@ -27,9 +27,10 @@ join(m)
 \item{...}{Additional arguments passed to \code{f}.}
 }
 \description{
-Classes implementing methods for these S7 generics are called monads. \verb{\%>>\%}
-is the \code{fmap()} pipe operator, and \verb{\%>-\%} is the \code{bind()} pipe operator.
-Operator usage is in the form \code{m \%>>\% f(...)}.
+Classes implementing methods for these S7 generics are called monads. Methods
+should be implemented such that the \link[=monad-laws]{monad laws} hold.
+\verb{\%>>\%} is the \code{fmap()} pipe operator, and \verb{\%>-\%} is the \code{bind()} pipe
+operator. Operator usage is in the form \code{m \%>>\% f(...)}.
 }
 \section{Details}{
 
@@ -51,10 +52,10 @@ For performance reasons you may wish to implement both regardless.
 
 
 The pipe operators expect a monadic object as \code{lhs} and a call expression
-or anonymous function as \code{rhs}. The pipe expression is transformed into a
-call to the corresponding monad generic with arguments to the call in \code{rhs}
-passed as additional arguments \code{...} to \code{f} in the generic. For example, \code{m \%>>\% f(x)} is equivalent to \code{fmap(m, f, x)} and \code{m \%>-\% f(x)} is equivalent
-to \code{bind(m, f, x)}.
+or a function as \code{rhs}. The pipe expression is transformed into a call to
+the corresponding monad generic with arguments to the call in \code{rhs} passed
+as additional arguments \code{...} to \code{f} in the generic. For example, \code{m \%>>\% f(x)} is equivalent to \code{fmap(m, f, x)} and \code{m \%>-\% f(x)} is equivalent to
+\code{bind(m, f, x)}.
 }
 
 \section{Trivia}{
@@ -63,3 +64,7 @@ to \code{bind(m, f, x)}.
 A class that only implements \code{fmap()} is called a functor.
 }
 
+\seealso{
+The \link[=monad-laws]{monad laws} that implementations should
+satisfy.
+}

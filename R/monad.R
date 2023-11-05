@@ -1,8 +1,9 @@
 #' Monad Operators and Generics
 #'
-#' Classes implementing methods for these S7 generics are called monads. `%>>%`
-#' is the `fmap()` pipe operator, and `%>-%` is the `bind()` pipe operator.
-#' Operator usage is in the form `m %>>% f(...)`.
+#' Classes implementing methods for these S7 generics are called monads. Methods
+#' should be implemented such that the \link[=monad-laws]{monad laws} hold.
+#' `%>>%` is the `fmap()` pipe operator, and `%>-%` is the `bind()` pipe
+#' operator. Operator usage is in the form `m %>>% f(...)`.
 #'
 #' @section Details:
 #'
@@ -21,11 +22,11 @@
 #' @section Operators:
 #'
 #'   The pipe operators expect a monadic object as `lhs` and a call expression
-#'   or anonymous function as `rhs`. The pipe expression is transformed into a
-#'   call to the corresponding monad generic with arguments to the call in `rhs`
-#'   passed as additional arguments `...` to `f` in the generic. For example, `m
-#'   %>>% f(x)` is equivalent to `fmap(m, f, x)` and `m %>-% f(x)` is equivalent
-#'   to `bind(m, f, x)`.
+#'   or a function as `rhs`. The pipe expression is transformed into a call to
+#'   the corresponding monad generic with arguments to the call in `rhs` passed
+#'   as additional arguments `...` to `f` in the generic. For example, `m %>>%
+#'   f(x)` is equivalent to `fmap(m, f, x)` and `m %>-% f(x)` is equivalent to
+#'   `bind(m, f, x)`.
 #'
 #' @section Trivia:
 #'
@@ -34,6 +35,9 @@
 #' @param m,lhs A monadic object.
 #' @param f,rhs A function. For `bind()`, it should return a monadic object.
 #' @param ... Additional arguments passed to `f`.
+#'
+#' @seealso The \link[=monad-laws]{monad laws} that implementations should
+#'   satisfy.
 #'
 #' @name monad
 NULL
