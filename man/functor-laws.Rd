@@ -16,11 +16,13 @@ expect_preserve_composition(f, g, m)
 \item{f, g}{Functions.}
 }
 \description{
-Calsses implementing \code{\link[=fmap]{fmap()}} are expected to satisfy the two \href{https://wiki.haskell.org/Functor#Functor_Laws}{functor laws}. Functions to test if
-the laws hold are provided for use with the \code{testthat} package.
+Classes implementing \code{\link[=fmap]{fmap()}} are expected to satisfy two functor laws.
+Functions to test if the laws hold are provided for use with the \code{testthat}
+package.
 }
 \details{
-The laws have been translated to R in the expectations as follows:
+The Haskell functor laws have been translated to R in the expectations as
+follows:
 
 \describe{
 \item{Preservation of identity:}{\code{m \%>>\% identity} is equal to \code{m |> identity()}.}
@@ -32,3 +34,8 @@ Where above \verb{\%.\%} denotes function composition.
 \references{
 \url{https://wiki.haskell.org/Functor#Functor_Laws}
 }
+\seealso{
+Other implementation laws: 
+\code{\link{monad-laws}}
+}
+\concept{implementation laws}

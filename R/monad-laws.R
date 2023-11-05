@@ -1,10 +1,11 @@
 #' Monad Laws
 #'
-#' Classes implementing [bind()] or [join()] are expected to satisfy the three
-#' [monad laws](https://wiki.haskell.org/Monad_laws). Functions to test if the
-#' laws hold are provided for use with the `testthat` package.
+#' Classes implementing [bind()] or [join()] are expected to satisfy three monad
+#' laws. Functions to test if the laws hold are provided for use with the
+#' `testthat` package.
 #'
-#' The laws have been translated to R in the expectations as follows:
+#' The Haskell monad laws have been translated to R in the expectations as
+#' follows:
 #'
 #' \describe{
 #'  \item{Left identity:}{`pure(a) %>-% h` is equal to `h(a)`.}
@@ -18,6 +19,8 @@
 #' @param m A monadic object.
 #'
 #' @references <https://wiki.haskell.org/Monad_laws>
+#'
+#' @family implementation laws
 #' @name monad-laws
 NULL
 

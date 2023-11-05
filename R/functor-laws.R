@@ -1,10 +1,11 @@
 #' Functor Laws
 #'
-#' Classes implementing [fmap()] are expected to satisfy the two [functor
-#' laws](https://wiki.haskell.org/Functor#Functor_Laws). Functions to test if
-#' the laws hold are provided for use with the `testthat` package.
+#' Classes implementing [fmap()] are expected to satisfy two functor laws.
+#' Functions to test if the laws hold are provided for use with the `testthat`
+#' package.
 #'
-#' The laws have been translated to R in the expectations as follows:
+#' The Haskell functor laws have been translated to R in the expectations as
+#' follows:
 #'
 #' \describe{
 #'  \item{Preservation of identity:}{`m %>>% identity` is equal to `m |> identity()`.}
@@ -17,6 +18,8 @@
 #' @param f,g Functions.
 #'
 #' @references <https://wiki.haskell.org/Functor#Functor_Laws>
+#'
+#' @family implementation laws
 #' @name functor-laws
 NULL
 

@@ -10,8 +10,11 @@ The package provides:
 
 * `fmap()`, `bind()` and `join()` S7 generic functions.
 * `%>>%` and `%>-%` pipe operators for `fmap()` and `bind()` respectively.
+* [testthat](https://testthat.r-lib.org/) expectations for functor and monad laws.
+* Implementations of the generics for the [maybe](https://armcn.github.io/maybe/) package.
 
-Implementing classes must provide `fmap()` and either `bind()` or `join()`.
+Implementing classes must provide `fmap()` and either `bind()` or `join()`, and
+the method implementations must satisfy the functor and monad laws.
 
 ## Installation
 
