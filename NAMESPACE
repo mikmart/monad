@@ -2,6 +2,7 @@
 
 export("%>-%")
 export("%>>%")
+export()
 export(bind)
 export(fmap)
 export(join)

@@ -19,3 +19,6 @@ test_that("can create custom pipe operators", {
   expect_equal("42" %?>% strscan(""), "4")
   expect_equal("42" %?>% function(x) strsplit(x, "")[[1]], c("4", "2"))
 })
+
+# FIXME: pipecallq(fmap, m %>>% f(m = 1)) |> match.call(fmap, call = _)
+# The problem is the extra args in `...`. Can we just.. not?
