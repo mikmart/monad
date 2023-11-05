@@ -16,6 +16,7 @@ maybe::just(1) \%>>\% `+`(1)
 maybe::nothing() \%>>\% `+`(1)
 
 # The bind operator corresponds to maybe::and_then().
+maybe::just(1) \%>-\% \(x) maybe::just(x + 1)
 maybe::just(1) \%>-\% \(x) maybe::nothing()
 maybe::nothing() \%>-\% \(x) maybe::just(1)
 \dontshow{\}) # examplesIf}
