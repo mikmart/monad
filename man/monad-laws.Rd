@@ -2,16 +2,16 @@
 % Please edit documentation in R/monad-laws.R
 \name{monad-laws}
 \alias{monad-laws}
-\alias{expect_left_identity}
-\alias{expect_right_identity}
-\alias{expect_associativity}
+\alias{expect_holds_left_identity}
+\alias{expect_holds_right_identity}
+\alias{expect_holds_associativity}
 \title{Monad Laws}
 \usage{
-expect_left_identity(pure, h, a)
+expect_holds_left_identity(pure, h, a)
 
-expect_right_identity(pure, m)
+expect_holds_right_identity(pure, m)
 
-expect_associativity(h, g, m)
+expect_holds_associativity(h, g, m)
 }
 \arguments{
 \item{pure}{The function to wrap a value in the monad.}

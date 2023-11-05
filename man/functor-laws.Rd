@@ -2,13 +2,13 @@
 % Please edit documentation in R/functor-laws.R
 \name{functor-laws}
 \alias{functor-laws}
-\alias{expect_preserve_identity}
-\alias{expect_preserve_composition}
+\alias{expect_holds_preserve_identity}
+\alias{expect_holds_preserve_composition}
 \title{Functor Laws}
 \usage{
-expect_preserve_identity(m)
+expect_holds_preserve_identity(m)
 
-expect_preserve_composition(f, g, m)
+expect_holds_preserve_composition(f, g, m)
 }
 \arguments{
 \item{m}{A functor object.}

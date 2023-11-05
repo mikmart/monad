@@ -26,21 +26,21 @@ NULL
 
 #' @rdname monad-laws
 #' @export
-expect_left_identity <- function(pure, h, a) {
+expect_holds_left_identity <- function(pure, h, a) {
   rlang::check_installed("testthat")
   testthat::expect_equal(pure(a) %>-% h, h(a))
 }
 
 #' @rdname monad-laws
 #' @export
-expect_right_identity <- function(pure, m) {
+expect_holds_right_identity <- function(pure, m) {
   rlang::check_installed("testthat")
   testthat::expect_equal(m %>-% pure, m)
 }
 
 #' @rdname monad-laws
 #' @export
-expect_associativity <- function(h, g, m) {
+expect_holds_associativity <- function(h, g, m) {
   rlang::check_installed("testthat")
   testthat::expect_equal((m %>-% g) %>-% h, m %>-% \(x) g(x) %>-% h)
 }

@@ -25,14 +25,14 @@ NULL
 
 #' @rdname functor-laws
 #' @export
-expect_preserve_identity <- function(m) {
+expect_holds_preserve_identity <- function(m) {
   rlang::check_installed("testthat")
   testthat::expect_equal(m %>>% identity, m |> identity())
 }
 
 #' @rdname functor-laws
 #' @export
-expect_preserve_composition <- function(f, g, m) {
+expect_holds_preserve_composition <- function(f, g, m) {
   rlang::check_installed("testthat")
   testthat::expect_equal(m %>>% (f %.% g), m %>>% g %>>% f)
 }
