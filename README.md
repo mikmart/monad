@@ -5,7 +5,7 @@
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-monad is provides S7 generic operators for monadic classes. Features include:
+monad provides generic operators for monadic classes. Features include:
 
 * `fmap()`, `bind()` and `join()` S7 generic functions.
 * `%>>%` and `%>-%` pipe operators for `fmap()` and `bind()` respectively.
