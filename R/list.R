@@ -1,17 +1,18 @@
 #' The List Monad
 #'
-#' The built-in `list` type is a monad with element-wise function application
-#' as [fmap()] and flattening as [join()]. It follows that [fmap()] is a map
-#' operator and [bind()] is a "flat map" operator.
+#' The `list` built-in type is a monad with element-wise function application
+#' as [fmap()] and flattening as [join()]. It follows that [`%>>%`] is a map
+#' operator and [`%>-%`] is a "flat map" operator. The methods are implemented
+#' as wrappers to the [purrr](https://purrr.tidyverse.org/) package.
 #'
-#' @seealso [purrr::map()] which implements [fmap()] for `list`
+#' @seealso [purrr::map()] which implements [fmap()] for `list`.
 #' @seealso [purrr::list_flatten()] which implements [join()] for `list`.
 #'
 #' @examplesIf requireNamespace("purrr", quietly = TRUE)
 #' # The fmap operator corresponds to purrr::map().
 #' list(1, 2) %>>% `+`(1)
 #'
-#' # The bind operator is a "flat-map".
+#' # The bind operator is a "flat map" that combines output lists.
 #' list(1, 2) %>-% \(x) list(x * 2, x / 2)
 #' @include monad.R
 #' @family monads

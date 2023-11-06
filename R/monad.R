@@ -12,23 +12,24 @@
 #'   Monads are containers for values. `fmap()` transforms the contained value
 #'   with a function. `bind()` transforms the contained value with a function
 #'   that returns a monadic object. `join()` takes a monad whose contained value
-#'   is another monad, and combines them into a new monadic object. It is used
-#'   to unwrap a layer of monadic structure. Implementing classes typically
-#'   embed some form of control flow or state management in `bind()` or
-#'   `join()`.
+#'   is another monad, and combines them into a new monadic object. It's used to
+#'   unwrap a layer of monadic structure. Implementing classes typically embed
+#'   some form of control flow or state management in `bind()` or `join()`.
 #'
-#'   There is a default implementation for `join()` if you provide `bind()`, and
-#'   a default implementation for `bind()` if you provide `join()` and `fmap()`.
-#'   For performance reasons you may wish to implement both regardless.
+#'   There's a default implementation for `join()` if you provide `bind()`, and
+#'   there's a default implementation for `bind()` if you provide `join()` and
+#'   `fmap()`. For performance reasons you may wish to implement both
+#'   regardless.
 #'
 #' @section Operators:
 #'
-#'   The pipe operators expect a monadic object as `lhs` and a call expression
-#'   or a function as `rhs`. The pipe expression is transformed into a call to
-#'   the corresponding monad generic with arguments to the call in `rhs` passed
-#'   as additional arguments `...` to `f` in the generic. For example, `m %>>%
-#'   f(x)` is equivalent to `fmap(m, f, x)` and `m %>-% f(x)` is equivalent to
-#'   `bind(m, f, x)`.
+#'   The pipe operators expect a monadic object as `lhs` and a function or a
+#'   call expression as `rhs`. A call in `rhs` is treated as partial application
+#'   of the function `f`. The pipe expression is transformed into a call to the
+#'   corresponding monad generic with any call arguments in `rhs` passed as
+#'   additional arguments to `f` in the generic. For example, `m %>>% f(x)` is
+#'   equivalent to `fmap(m, f, x)` and `m %>-% f(x)` is equivalent to `bind(m,
+#'   f, x)`.
 #'
 #' @section Trivia:
 #'
@@ -40,6 +41,7 @@
 #'
 #' @seealso The \link[=monad-laws]{monad laws} and \link[=functor-laws]{functor
 #'   laws} that implementations should satisfy.
+#' @seealso [list] and [maybe] for examples of implementing classes.
 #'
 #' @name monad
 NULL

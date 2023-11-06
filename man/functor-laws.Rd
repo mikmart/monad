@@ -20,7 +20,7 @@ The Haskell functor laws can be translated into R as follows:
 \item{Preservation of composition:}{\code{m \%>>\% (f \%.\% g)} is equal to \code{m \%>>\% g \%>>\% f}.}
 }
 
-Where above \verb{\%.\%} denotes function composition.
+Where above \verb{\%.\%} denotes function composition \verb{\\(f, g) \\(x) f(g(x))}.
 }
 \references{
 \url{https://wiki.haskell.org/Functor#Functor_Laws}

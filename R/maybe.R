@@ -1,12 +1,12 @@
 #' The Maybe Monad
 #'
-#' The package [maybe](https://armcn.github.io/maybe/) implements the Maybe
-#' monad. Here method implementations for [fmap()], [bind()] and [join()]
-#' are provided for the `maybe` S3 class from the package. The methods are
-#' simple wrappers for the corresponding functions in maybe.
+#' The [maybe](https://armcn.github.io/maybe/) package implements the Maybe
+#' monad. It represents the explicit possiblity of absence of a value.
+#' Methods for [fmap()], [bind()] and [join()] are provided for the `maybe`
+#' S3 class as wrappers to functions in the package.
 #'
-#' @seealso [maybe::maybe_map()] which implements [fmap()] for `maybe` values.
-#' @seealso [maybe::and_then()] which implements [bind()] for `maybe` values.
+#' @seealso [maybe::maybe_map()] which implements [fmap()] for `maybe`.
+#' @seealso [maybe::and_then()] which implements [bind()] for `maybe`.
 #'
 #' @examplesIf requireNamespace("maybe", quietly = TRUE)
 #' # The fmap operator corresponds to maybe::maybe_map().
@@ -26,12 +26,12 @@ class_maybe <- new_S3_class("maybe")
 
 method(fmap, class_maybe) <- function(m, f, ...) {
   check_installed("maybe")
-  maybe::maybe_map(m, f, ...)
+  maybe::maybe_map(m, \(x) f(x, ...))
 }
 
 method(bind, class_maybe) <- function(m, f, ...) {
   check_installed("maybe")
-  maybe::and_then(m, f, ...)
+  maybe::and_then(m, \(x) f(x, ...))
 }
 
 method(join, class_maybe) <- function(m) {

@@ -10,7 +10,7 @@
 #'  \item{Preservation of composition:}{`m %>>% (f %.% g)` is equal to `m %>>% g %>>% f`.}
 #' }
 #'
-#' Where above `%.%` denotes function composition.
+#' Where above `%.%` denotes function composition `\(f, g) \(x) f(g(x))`.
 #'
 #' @param m A functor object.
 #' @param f,g Functions.

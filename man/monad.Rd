@@ -39,24 +39,25 @@ and \verb{\%>-\%} is the \code{bind()} pipe operator. Operator usage is in the f
 Monads are containers for values. \code{fmap()} transforms the contained value
 with a function. \code{bind()} transforms the contained value with a function
 that returns a monadic object. \code{join()} takes a monad whose contained value
-is another monad, and combines them into a new monadic object. It is used
-to unwrap a layer of monadic structure. Implementing classes typically
-embed some form of control flow or state management in \code{bind()} or
-\code{join()}.
+is another monad, and combines them into a new monadic object. It's used to
+unwrap a layer of monadic structure. Implementing classes typically embed
+some form of control flow or state management in \code{bind()} or \code{join()}.
 
-There is a default implementation for \code{join()} if you provide \code{bind()}, and
-a default implementation for \code{bind()} if you provide \code{join()} and \code{fmap()}.
-For performance reasons you may wish to implement both regardless.
+There's a default implementation for \code{join()} if you provide \code{bind()}, and
+there's a default implementation for \code{bind()} if you provide \code{join()} and
+\code{fmap()}. For performance reasons you may wish to implement both
+regardless.
 }
 
 \section{Operators}{
 
 
-The pipe operators expect a monadic object as \code{lhs} and a call expression
-or a function as \code{rhs}. The pipe expression is transformed into a call to
-the corresponding monad generic with arguments to the call in \code{rhs} passed
-as additional arguments \code{...} to \code{f} in the generic. For example, \code{m \%>>\% f(x)} is equivalent to \code{fmap(m, f, x)} and \code{m \%>-\% f(x)} is equivalent to
-\code{bind(m, f, x)}.
+The pipe operators expect a monadic object as \code{lhs} and a function or a
+call expression as \code{rhs}. A call in \code{rhs} is treated as partial application
+of the function \code{f}. The pipe expression is transformed into a call to the
+corresponding monad generic with any call arguments in \code{rhs} passed as
+additional arguments to \code{f} in the generic. For example, \code{m \%>>\% f(x)} is
+equivalent to \code{fmap(m, f, x)} and \code{m \%>-\% f(x)} is equivalent to \code{bind(m, f, x)}.
 }
 
 \section{Trivia}{
@@ -68,4 +69,6 @@ A class that only implements \code{fmap()} is called a functor.
 \seealso{
 The \link[=monad-laws]{monad laws} and \link[=functor-laws]{functor
 laws} that implementations should satisfy.
+
+\link{list} and \link{maybe} for examples of implementing classes.
 }

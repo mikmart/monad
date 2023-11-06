@@ -6,7 +6,7 @@
 \arguments{
 \item{pure}{The function to wrap a value in the monad.}
 
-\item{h, g}{Functions that return monadic objects.}
+\item{h, g}{Monadic functions. Functions that return monadic objects.}
 
 \item{a}{Any object.}
 

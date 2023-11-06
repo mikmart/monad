@@ -2,11 +2,22 @@ url: https://mikmart.github.io/monad/
 template:
   bootstrap: 5
 reference:
-  - subtitle: Monad
+  - title: Monad
+    desc: |
+      A monadic object is a container for a value, or a value with a context.
+      `fmap()` encodes what it means to apply a regular function in the context.
+      `bind()` encodes what it means to apply a monadic function in the context.
+      `join()` encodes how to flatten a layer of monadic structure.
+
+      The `%>>%` and `%>-%` operators wrap `fmap()` and `bind()` for writing
+      monadic data pipelines.
   - contents: ["monad"]
-  - subtitle: Implementation Laws
-    desc: The rules that implementations of the generics must follow.
+  - subtitle: Laws for Implementations
+    desc: >
+      Implementations of methods for the generics must follow certain rules.
+      Functor Laws establish the requirements for `fmap()`. Monad Laws establish
+      the requirements for `bind()`.
   - contents: ends_with("laws")
-  - subtitle: Implementations
-    desc: Classes with implementations for the generics.
+  - title: Implementations
+    desc: Classes that have method implementations for the monad generics.
   - contents: ["list", "maybe"]

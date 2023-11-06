@@ -4,10 +4,10 @@
 \alias{maybe}
 \title{The Maybe Monad}
 \description{
-The package \href{https://armcn.github.io/maybe/}{maybe} implements the Maybe
-monad. Here method implementations for \code{\link[=fmap]{fmap()}}, \code{\link[=bind]{bind()}} and \code{\link[=join]{join()}}
-are provided for the \code{maybe} S3 class from the package. The methods are
-simple wrappers for the corresponding functions in maybe.
+The \href{https://armcn.github.io/maybe/}{maybe} package implements the Maybe
+monad. It represents the explicit possiblity of absence of a value.
+Methods for \code{\link[=fmap]{fmap()}}, \code{\link[=bind]{bind()}} and \code{\link[=join]{join()}} are provided for the \code{maybe}
+S3 class as wrappers to functions in the package.
 }
 \examples{
 \dontshow{if (requireNamespace("maybe", quietly = TRUE)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
@@ -22,9 +22,9 @@ maybe::nothing() \%>-\% \(x) maybe::just(1)
 \dontshow{\}) # examplesIf}
 }
 \seealso{
-\code{\link[maybe:maybe_map]{maybe::maybe_map()}} which implements \code{\link[=fmap]{fmap()}} for \code{maybe} values.
+\code{\link[maybe:maybe_map]{maybe::maybe_map()}} which implements \code{\link[=fmap]{fmap()}} for \code{maybe}.
 
-\code{\link[maybe:and_then]{maybe::and_then()}} which implements \code{\link[=bind]{bind()}} for \code{maybe} values.
+\code{\link[maybe:and_then]{maybe::and_then()}} which implements \code{\link[=bind]{bind()}} for \code{maybe}.
 
 Other monads: 
 \code{\link{list}}

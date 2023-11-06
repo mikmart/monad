@@ -12,7 +12,7 @@
 #' }
 #'
 #' @param pure The function to wrap a value in the monad.
-#' @param h,g Functions that return monadic objects.
+#' @param h,g Monadic functions. Functions that return monadic objects.
 #' @param a Any object.
 #' @param m A monadic object.
 #'
