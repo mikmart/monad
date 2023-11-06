@@ -68,9 +68,11 @@
 <code><a href="reference/monad.html">fmap()</a></code>, <code><a href="reference/monad.html">bind()</a></code> and <code><a href="reference/monad.html">join()</a></code> <a href="https://rconsortium.github.io/S7/" class="external-link">S7</a> generic functions.</li>
 <li>
 <code>%&gt;&gt;%</code> and <code>%&gt;-%</code> pipe operators for <code><a href="reference/monad.html">fmap()</a></code> and <code><a href="reference/monad.html">bind()</a></code> respectively.</li>
-<li>
-<a href="https://testthat.r-lib.org/" class="external-link">testthat</a> expectations for functor and monad laws.</li>
-<li>Implementations of the generics for the <a href="https://armcn.github.io/maybe/" class="external-link">maybe</a> package.</li>
+</ul>
+<p>Implementations of the generics are provided for:</p>
+<ul>
+<li>The <code>list</code> built-in type.</li>
+<li>The <code>maybe</code> S3 class from the <a href="https://armcn.github.io/maybe/" class="external-link">maybe</a> package.</li>
 </ul>
 <p>Implementing classes must provide <code><a href="reference/monad.html">fmap()</a></code> and either <code><a href="reference/monad.html">bind()</a></code> or <code><a href="reference/monad.html">join()</a></code>, and the method implementations must satisfy the functor and monad laws.</p>
 <div class="section level2">
