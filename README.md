@@ -13,6 +13,7 @@ monad provides generic operators for monadic classes. Features include:
 
 Implementations of the generics are provided for:
 
+* The `list` built-in type.
 * The `maybe` S3 class from the [maybe](https://armcn.github.io/maybe/) package.
 
 Implementing classes must provide `fmap()` and either `bind()` or `join()`, and

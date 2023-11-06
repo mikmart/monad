@@ -18,6 +18,7 @@
 #' maybe::just(1) %>-% \(x) maybe::nothing()
 #' maybe::nothing() %>-% \(x) maybe::just(1)
 #' @include monad.R
+#' @family monads
 #' @name maybe
 NULL
 

@@ -9,4 +9,4 @@ reference:
   - contents: ends_with("laws")
   - subtitle: Implementations
     desc: Classes with implementations for the generics.
-  - contents: ["maybe"]
+  - contents: ["list", "maybe"]

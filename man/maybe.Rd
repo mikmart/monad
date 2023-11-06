@@ -25,4 +25,8 @@ maybe::nothing() \%>-\% \(x) maybe::just(1)
 \code{\link[maybe:maybe_map]{maybe::maybe_map()}} which implements \code{\link[=fmap]{fmap()}} for \code{maybe} values.
 
 \code{\link[maybe:and_then]{maybe::and_then()}} which implements \code{\link[=bind]{bind()}} for \code{maybe} values.
+
+Other monads: 
+\code{\link{list}}
 }
+\concept{monads}
