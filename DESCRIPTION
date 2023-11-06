@@ -3,11 +3,14 @@ Title: Monad Operators and Generics
 Version: 0.0.0.9000
 Authors@R: 
     person("Mikko", "Marttila", , "mikkmart@protonmail.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+Description: `%>>%` and `%>-%` let you compose generic monadic function
+    pipelines based on implementing the S7 generics `fmap()` and `bind()`.
+    Methods are provided for the built-in `list` type and the `maybe`
+    class from the 'maybe' package. The concepts are modelled directly after
+    the Monad typeclass in Haskell, but adapted for idiomatic use in R.
 License: MIT + file LICENSE
-Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+URL: https://github.com/mikmart/monad, https://mikmart.github.io/monad/
+BugReports: https://github.com/mikmart/monad/issues
 Depends:
     R (>= 4.1)
 Imports: 
@@ -17,9 +20,9 @@ Suggests:
     purrr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
-URL: https://github.com/mikmart/monad,
-    https://mikmart.github.io/monad/
-BugReports: https://github.com/mikmart/monad/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
 Collate: 
     'functor-laws.R'
     'pipeop.R'
