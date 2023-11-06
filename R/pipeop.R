@@ -19,12 +19,20 @@ pipecall <- function(opfunc, lhs, rhs) {
     func <- rhs[[1]]
     args <- as.list(rhs[-1])
   }
-  # Handle "special" calls that can occur as RHS.
+  # Handle "special" calls that can occur as RHS:
+  # Anonymous functions and parenthesized expressions.
   if (func == quote(`function`) || func == quote(`(`)) {
     func <- list(rhs)
     args <- list()
   }
-  as.call(c(opfunc, lhs, func, args))
+  func <- partfunc(func, args)
+  as.call(c(opfunc, lhs, func))
+}
+
+# Construct partially applied anonymous function that takes 1 argument.
+partfunc <- function(func, args) {
+  # TODO: Do the thing.
+  c(func, args)
 }
 
 # A convenient form for testing.
