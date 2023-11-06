@@ -11,7 +11,6 @@ RoxygenNote: 7.2.3
 Depends:
     R (>= 4.1)
 Imports: 
-    rlang,
     S7
 Suggests: 
     maybe,
@@ -26,4 +25,5 @@ Collate:
     'monad.R'
     'maybe.R'
     'monad-laws.R'
+    'utils.R'
     'zzz.R'
