@@ -39,6 +39,7 @@
 #' @param f,rhs A function. For `bind()`, it should return a monadic object.
 #' @param ... Additional arguments passed to `f`.
 #'
+#' @returns A monadic object.
 #' @seealso The \link[=monad-laws]{monad laws} and \link[=functor-laws]{functor
 #'   laws} that implementations should satisfy.
 #' @seealso [list] and [maybe] for examples of implementing classes.

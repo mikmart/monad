@@ -26,6 +26,9 @@ join(m)
 
 \item{...}{Additional arguments passed to \code{f}.}
 }
+\value{
+A monadic object.
+}
 \description{
 Classes implementing methods for these S7 generics are called monads.
 \code{fmap()} should be implemented such that the \link[=functor-laws]{functor
