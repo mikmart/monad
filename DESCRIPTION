@@ -1,14 +1,13 @@
 Package: monad
-Title: Monad Operators and Generics
-Version: 0.0.0.9000
+Title: Operators and Generics for Monads
+Version: 0.1.0
 Authors@R: 
     person("Mikko", "Marttila", , "mikkmart@protonmail.com", role = c("aut", "cre"))
-Description: Operators `%>>%` and `%>-%` let you compose generic monadic
-    function pipelines based on implementing the S7 generics `fmap()` and
-    `bind()`.  Methods are provided for the built-in `list` type and the
-    `maybe` class from the 'maybe' package. The concepts are modelled
-    directly after the Monad typeclass in Haskell, but adapted for
-    idiomatic use in R.
+Description: Compose generic monadic function pipelines with `%>>%` and
+    `%>-%` based on implementing the 'S7' generics `fmap()` and `bind()`.
+    Methods are provided for the built-in `list` type and the `maybe`
+    class from the 'maybe' package. The concepts are modelled directly
+    after the Monad typeclass in Haskell, but adapted for idiomatic use in R.
 License: MIT + file LICENSE
 URL: https://github.com/mikmart/monad, https://mikmart.github.io/monad/
 BugReports: https://github.com/mikmart/monad/issues
