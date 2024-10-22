@@ -69,6 +69,39 @@ equivalent to \code{fmap(m, f, x)} and \code{m \%>-\% f(x)} is equivalent to \co
 A class that only implements \code{fmap()} is called a functor.
 }
 
+\examples{
+# We demonstrate by implementing a simple Either monad.
+library(S7)
+
+# Start by defining constructors of the Left and Right variants. Conventionally
+# a Right variant signifies success and Left an error condition with a context.
+left <- function(x) structure(list(value = x), class = c("left", "either"))
+right <- function(x) structure(list(value = x), class = c("right", "either"))
+
+# Implement fmap() and bind() methods to gain access to monad operators.
+class_either <- new_S3_class("either")
+
+method(fmap, class_either) <- function(m, f, ...) {
+  if (inherits(m, "left")) m else right(f(m$value))
+}
+
+method(bind, class_either) <- function(m, f, ...) {
+  if (inherits(m, "left")) m else f(m$value)
+}
+
+# Use with your function that handles errors by returning a monadic value.
+mlog <- function(x) {
+  if (x > 0) right(log(x)) else left("`x` must be strictly positive.")
+}
+
+# fmap() modifies the contained value with a regular function.
+mlog(2) \%>>\% \(x) x + 1
+mlog(0) \%>>\% \(x) x + 1
+
+# bind() modifies the contained value with a function that returns an Either.
+mlog(2) \%>-\% mlog()
+mlog(0) \%>-\% mlog()
+}
 \seealso{
 The \link[=monad-laws]{monad laws} and \link[=functor-laws]{functor
 laws} that implementations should satisfy.
