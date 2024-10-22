@@ -47,7 +47,6 @@
 NULL
 
 #' @include pipeop.R
-#' @import S7
 
 #' @rdname monad
 #' @export
