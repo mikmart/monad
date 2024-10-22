@@ -5,8 +5,8 @@
 \title{The List Monad}
 \description{
 The \code{list} built-in type is a monad with element-wise function application
-as \code{\link[=fmap]{fmap()}} and flattening as \code{\link[=join]{join()}}. It follows that \link{\%>>\%} is a map
-operator and \link{\%>-\%} is a "flat map" operator. The methods are implemented
+as \code{\link[=fmap]{fmap()}} and flattening as \code{\link[=join]{join()}}. It follows that \verb{\%>>\%} is a map
+operator and \verb{\%>-\%} is a "flat map" operator. The methods are implemented
 as wrappers to the \href{https://purrr.tidyverse.org/}{purrr} package.
 }
 \examples{

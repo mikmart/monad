@@ -1,8 +1,8 @@
 #' The List Monad
 #'
 #' The `list` built-in type is a monad with element-wise function application
-#' as [fmap()] and flattening as [join()]. It follows that [`%>>%`] is a map
-#' operator and [`%>-%`] is a "flat map" operator. The methods are implemented
+#' as [fmap()] and flattening as [join()]. It follows that `%>>%` is a map
+#' operator and `%>-%` is a "flat map" operator. The methods are implemented
 #' as wrappers to the [purrr](https://purrr.tidyverse.org/) package.
 #'
 #' @seealso [purrr::map()] which implements [fmap()] for `list`.
