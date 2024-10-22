@@ -25,7 +25,13 @@ Operator names and calling conventions have been adapted to fit R.
 
 ## Installation
 
-Install from [GitHub](https://github.com/mikmart/monad) with:
+Install the current release from [CRAN](https://cran.r-project.org/):
+
+``` r
+install.packages("monad")
+```
+
+Or the development version from [GitHub](https://github.com/mikmart/monad):
 
 ``` r
 # install.packages("pak")
