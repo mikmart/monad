@@ -10,7 +10,7 @@ Methods for \code{\link[=fmap]{fmap()}}, \code{\link[=bind]{bind()}} and \code{\
 S3 class as wrappers to functions in the package.
 }
 \examples{
-\dontshow{if (requireNamespace("maybe", quietly = TRUE)) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (requireNamespace("maybe", quietly = TRUE)) withAutoprint(\{ # examplesIf}
 # The fmap operator corresponds to maybe::maybe_map().
 maybe::just(1) \%>>\% `+`(1)
 maybe::nothing() \%>>\% `+`(1)

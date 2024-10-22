@@ -70,3 +70,50 @@ method(bind, class_any) <- function(m, f, ...) join(fmap(m, f, ...))
 #' @export
 join <- new_generic("join", "m", function(m) S7_dispatch())
 method(join, class_any) <- function(m) bind(m, identity)
+
+#' Functor Laws
+#'
+#' Classes implementing [fmap()] are expected to satisfy two functor laws:
+#' preservation of identity and preservation of composition.
+#'
+#' The Haskell functor laws can be translated into R as follows:
+#'
+#' \describe{
+#'  \item{Preservation of identity:}{`m %>>% identity` is equal to `m |> identity()`.}
+#'  \item{Preservation of composition:}{`m %>>% (f %.% g)` is equal to `m %>>% g %>>% f`.}
+#' }
+#'
+#' Where above `%.%` denotes function composition `\(f, g) \(x) f(g(x))`.
+#'
+#' @param m A functor object.
+#' @param f,g Functions.
+#'
+#' @references <https://wiki.haskell.org/Functor#Functor_Laws>
+#'
+#' @family implementation laws
+#' @name functor-laws
+NULL
+
+#' Monad Laws
+#'
+#' Classes implementing [bind()] are expected to satisfy three monad laws: left
+#' identity, right identity, and associativity.
+#'
+#' The Haskell monad laws can be translated into R as follows:
+#'
+#' \describe{
+#'  \item{Left identity:}{`pure(a) %>-% h` is equal to `h(a)`.}
+#'  \item{Right identity:}{`m %>-% pure` is equal to `m`.}
+#'  \item{Associativity:}{`(m %>-% g) %>-% h` is equal to `m %>-% \(x) g(x) %>-% h`.}
+#' }
+#'
+#' @param pure The function to wrap a value in the monad.
+#' @param h,g Monadic functions. Functions that return monadic objects.
+#' @param a Any object.
+#' @param m A monadic object.
+#'
+#' @references <https://wiki.haskell.org/Monad_laws>
+#'
+#' @family implementation laws
+#' @name monad-laws
+NULL
