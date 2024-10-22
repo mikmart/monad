@@ -1,10 +1,14 @@
 test_that("pipe call construction works", {
-  expect_equal(pipecallq(fmap, m %>>% f(x)), fmap(m, f, x) |> quote())
-  expect_equal(pipecallq(bind, m %>-% f(x)), bind(m, f, x) |> quote())
+  expect_equal(pipecallq(fmap, m %>>% f()), fmap(m, f) |> quote())
+  expect_equal(pipecallq(bind, m %>-% f()), bind(m, f) |> quote())
+})
+
+test_that("additional arguments are treated as partial application", {
+  expect_equal(pipecallq(fmap, m %>>% f(x, y)), fmap(m, monad:::partialr(f, x, y)) |> quote())
 })
 
 test_that("lhs of a pipe call can be NULL", {
-  expect_equal(pipecallq(fmap, NULL %>>% f(x)), fmap(NULL, f, x) |> quote())
+  expect_equal(pipecallq(fmap, NULL %>>% f()), fmap(NULL, f) |> quote())
 })
 
 test_that("anonymous functions in rhs behave as expected", {
@@ -23,7 +27,9 @@ test_that("can create custom pipe operators", {
   expect_equal("42" %?>% \(x) strsplit(x, "")[[1]], c("4", "2"))
 })
 
-# FIXME: pipecallq(fmap, m %>>% f(m = 1)) |> match.call(fmap, call = _)
-# The problem is the extra args in `...`. Can we just.. not?
-
-# TODO: Treat calls in RHS as partial application.
+test_that("arguments in RHS are not matched to pipe function", {
+  expect_equal(
+    pipecallq(fmap, m %>>% f(m = 1)) |> match.call(fmap, call = _),
+    fmap(m = m, f = monad:::partialr(f, m = 1)) |> quote()
+  )
+})

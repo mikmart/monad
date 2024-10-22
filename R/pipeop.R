@@ -25,14 +25,18 @@ pipecall <- function(opfunc, lhs, rhs) {
     func <- list(rhs)
     args <- list()
   }
-  func <- partfunc(func, args)
+  # Forward any args to call to partial application. The resulting call
+  # will be evaluated in the user's enviornment, not the package's, so
+  # the unexported function won't be visible there without using `:::`.
+  if (length(args) > 0) {
+    func <- as.call(c(call(":::", quote(monad), quote(partialr)), func, args))
+  }
   as.call(c(opfunc, lhs, func))
 }
 
-# Construct partially applied anonymous function that takes 1 argument.
-partfunc <- function(func, args) {
-  # TODO: Do the thing.
-  c(func, args)
+# Hack because we don't have positional-only parameters in the language.
+partialr <- function(`_func`, ...) {
+  function(`_arg`) `_func`(`_arg`, ...)
 }
 
 # A convenient form for testing.
