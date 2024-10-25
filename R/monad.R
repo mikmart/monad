@@ -42,7 +42,7 @@
 #' @returns A monadic object.
 #' @seealso The \link[=monad-laws]{monad laws} and \link[=functor-laws]{functor
 #'   laws} that implementations should satisfy.
-#' @seealso [list] and [maybe] for examples of implementing classes.
+#' @seealso [List] and [Maybe] for examples of implementing classes.
 #'
 #' @examples
 #' # We demonstrate by implementing a simple Either monad.

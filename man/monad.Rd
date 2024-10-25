@@ -106,5 +106,5 @@ mlog(0) \%>-\% mlog()
 The \link[=monad-laws]{monad laws} and \link[=functor-laws]{functor
 laws} that implementations should satisfy.
 
-\link{list} and \link{maybe} for examples of implementing classes.
+\link{List} and \link{Maybe} for examples of implementing classes.
 }

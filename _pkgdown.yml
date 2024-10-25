@@ -20,4 +20,4 @@ reference:
   - contents: ends_with("laws")
   - title: Implementations
     desc: Classes that have method implementations for the monad generics.
-  - contents: ["list", "maybe"]
+  - contents: ["List", "Maybe"]

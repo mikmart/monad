@@ -19,7 +19,7 @@
 #' maybe::nothing() %>-% \(x) maybe::just(1)
 #' @include monad.R
 #' @family monads
-#' @name maybe
+#' @name Maybe
 NULL
 
 class_maybe <- new_S3_class("maybe")

@@ -13,8 +13,8 @@ The monad package provides generics and generic operators for monadic classes. T
 
 Implementations of the generics are provided for:
 
-* The `list` built-in type via [purrr](https://purrr.tidyverse.org/). See `?monad::list`.
-* The `maybe` S3 class from [maybe](https://armcn.github.io/maybe/). See `?monad::maybe`.
+* The `list` built-in type via [purrr](https://purrr.tidyverse.org/). See `?List`.
+* The `maybe` S3 class from [maybe](https://armcn.github.io/maybe/). See `?Maybe`.
 
 Implementing classes must provide `fmap()` and either `bind()` or `join()`.
 Method implementations must satisfy the `?"functor-laws"` and `?"monad-laws"`.

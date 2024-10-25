@@ -16,7 +16,7 @@
 #' list(1, 2) %>-% \(x) list(x * 2, x / 2)
 #' @include monad.R
 #' @family monads
-#' @name list
+#' @name List
 NULL
 
 method(fmap, class_list) <- function(m, f, ...) {
