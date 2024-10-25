@@ -5,7 +5,7 @@
 \alias{monad-package}
 \title{monad: Operators and Generics for Monads}
 \description{
-Compose generic monadic function pipelines with `%>>%` and `%>-%` based on implementing the 'S7' generics `fmap()` and `bind()`. Methods are provided for the built-in `list` type and the `maybe` class from the 'maybe' package. The concepts are modelled directly after the Monad typeclass in Haskell, but adapted for idiomatic use in R.
+Compose generic monadic function pipelines with %>>% and %>-% based on implementing the 'S7' generics fmap() and bind(). Methods are provided for the built-in list type and the maybe class from the 'maybe' package. The concepts are modelled directly after the Monad typeclass in Haskell, but adapted for idiomatic use in R.
 }
 \seealso{
 Useful links:
