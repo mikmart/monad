@@ -24,6 +24,7 @@ list(1, 2) \%>-\% \(x) list(x * 2, x / 2)
 \code{\link[purrr:list_flatten]{purrr::list_flatten()}} which implements \code{\link[=join]{join()}} for \code{list}.
 
 Other monads: 
+\code{\link{Function}},
 \code{\link{Maybe}}
 }
 \concept{monads}

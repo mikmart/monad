@@ -27,6 +27,7 @@ RoxygenNote: 7.3.2.9000
 Collate: 
     'pipeop.R'
     'monad.R'
+    'function.R'
     'list.R'
     'maybe.R'
     'monad-package.R'

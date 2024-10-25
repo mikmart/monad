@@ -7,6 +7,7 @@
 #'
 #' @seealso [purrr::map()] which implements [fmap()] for `list`.
 #' @seealso [purrr::list_flatten()] which implements [join()] for `list`.
+#' @family monads
 #'
 #' @examplesIf requireNamespace("purrr", quietly = TRUE)
 #' # The fmap operator corresponds to purrr::map().
@@ -14,10 +15,10 @@
 #'
 #' # The bind operator is a "flat map" that combines output lists.
 #' list(1, 2) %>-% \(x) list(x * 2, x / 2)
-#' @include monad.R
-#' @family monads
 #' @name List
 NULL
+
+#' @include monad.R
 
 method(fmap, class_list) <- function(m, f, ...) {
   check_installed("purrr")

@@ -7,6 +7,7 @@
 #'
 #' @seealso [maybe::maybe_map()] which implements [fmap()] for `maybe`.
 #' @seealso [maybe::and_then()] which implements [bind()] for `maybe`.
+#' @family monads
 #'
 #' @examplesIf requireNamespace("maybe", quietly = TRUE)
 #' # The fmap operator corresponds to maybe::maybe_map().
@@ -17,10 +18,10 @@
 #' maybe::just(1) %>-% \(x) maybe::just(x + 1)
 #' maybe::just(1) %>-% \(x) maybe::nothing()
 #' maybe::nothing() %>-% \(x) maybe::just(1)
-#' @include monad.R
-#' @family monads
 #' @name Maybe
 NULL
+
+#' @include monad.R
 
 class_maybe <- new_S3_class("maybe")
 

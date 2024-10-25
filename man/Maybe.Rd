@@ -27,6 +27,7 @@ maybe::nothing() \%>-\% \(x) maybe::just(1)
 \code{\link[maybe:and_then]{maybe::and_then()}} which implements \code{\link[=bind]{bind()}} for \code{maybe}.
 
 Other monads: 
+\code{\link{Function}},
 \code{\link{List}}
 }
 \concept{monads}
