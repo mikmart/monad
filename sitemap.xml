@@ -1,36 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://mikmart.github.io/monad/404.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/index.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/reference/functor-laws.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/reference/list.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/reference/maybe.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/reference/monad-laws.html</loc>
-  </url>
-  <url>
-    <loc>https://mikmart.github.io/monad/reference/monad.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://mikmart.github.io/monad/404.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/LICENSE-text.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/LICENSE.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/authors.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/index.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/news/index.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/reference/functor-laws.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/reference/index.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/reference/list.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/reference/maybe.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/reference/monad-laws.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/reference/monad-package.html</loc></url>
+<url><loc>https://mikmart.github.io/monad/reference/monad.html</loc></url>
 </urlset>
+
