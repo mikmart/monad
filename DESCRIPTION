@@ -1,6 +1,6 @@
 Package: monad
 Title: Operators and Generics for Monads
-Version: 0.1.1
+Version: 0.1.1.9000
 Authors@R: 
     person("Mikko", "Marttila", , "mikkmart@protonmail.com", role = c("aut", "cre"))
 Description: Compose generic monadic function pipelines with %>>% and %>-%
